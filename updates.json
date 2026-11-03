@@ -1,11 +1,11 @@
 {
-  "version": "0.6.7",
-  "notes": "- 新增 Windows 应用内更新：后台自动检查、更新提示、下载进度和确认后重启安装；支持关闭自动检查。公开分发仓库只保存安装包及清单，无需客户端 GitHub 令牌。\r\n- Add Windows in-app updates with automatic background checks, availability notices, download progress, restart consent, and an opt-out. A public distribution-only repository serves installers and manifests without client GitHub tokens.\r\n- 更新包使用带版本绑定的签名校验；安装前阻止并发同步/AI 操作、沿用临时会话退出清理，并备份校验已关闭的资料库，保持原安装目录。旧版需手动升级一次；macOS/Linux 暂不接入更新。\r\n- Verify version-bound update signatures; before installation, block conflicting sync/AI work, retain normal temporary-thread cleanup, and back up the closed vault while preserving the installation directory. Older versions require one manual upgrade; macOS/Linux updates remain out of scope.\r\n\n- 修复 Windows 发版脚本续传时未展开 GitHub Release 数组、可能创建重复草稿的问题；增加离线 PowerShell 回归测试，统一使用 HTTP/1.1 发布传输。此维护修复不改变 v0.6.6 安装包。\r\n- Fix release-page array handling that could create duplicate drafts during Windows release resumption. Add offline PowerShell regression coverage and use HTTP/1.1 for publishing. This maintenance fix does not change the v0.6.6 installer.\r\n",
-  "pub_date": "2026-11-03T04:17:10.577Z",
+  "version": "0.6.8",
+  "notes": "- 增加官方 DeepSeek Harness Windows 桌面版识别与内置运行时适配：从安装注册表、默认目录或手动路径定位，使用专属 SDK profile，保留账号认证和现有会话权限。已卸载 npm CLI，使用官方桌面版 `0.2.1-rc.5` 验证模型发现、真实账号流式回复及合成工具调用。\r\n- Add official DeepSeek Harness Windows Desktop discovery and bundled-runtime adaptation through installation records, default directories, and manual paths. Reuse authentication, isolated SDK profiles, and existing conversation permissions. With the npm CLI removed, official Desktop `0.2.1-rc.5` passed model discovery, a live account streaming response, and a synthetic tool call.\r\n- 修复桌面安装名称包含版本号时无法识别，以及启动时读取到尚未写完的端口文件导致偶发连接失败；端口文件改为完整写入后原子发布。\r\n- Recognize version-suffixed Desktop installation names and atomically publish runtime port files to prevent intermittent startup failures from partial reads.\r\n",
+  "pub_date": "2026-11-03T05:58:24.364Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/Barton-zhang666/WechatX-Releases/releases/download/v0.6.7/WechatX_0.6.7_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXlzc1ZEWkJWdnJxWkllMjNxLy9PSGV2N3Fpa2t1L1BKVFNzUGdtNXdEUWd4Tkk5bWx4YXZLVlJaT2hRY2J6QjFsUXlWVXZROXJ4TjV6SG1BV3lldkQrZ2dVSGd2Q0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjc5NDMwCWZpbGU6V2VjaGF0WF8wLjYuN194NjQtc2V0dXAuZXhlCXZlcnNpb246MC42LjcKN3RuQjVTNHVTRkNUY21PZlJjc3RWcEIrQk1FM0M3ZWhEcXNiMkdyQTQ3a2IrbXNjV1JhOWlUSzRzMHo3QjNxdlpQZTI0cVBVdjZEWEd1RGlhb3JBQXc9PQo="
+      "url": "https://github.com/Barton-zhang666/WechatX-Releases/releases/download/v0.6.8/WechatX_0.6.8_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXlzc1ZEWkJWdnNPb3NNdkgxZk1maTRVck5MQk8xcDNSb2dTSkdSV3dsU29uTFFkaU1VckNqSkdva05FSG14MkVLM2tFd1doRHFGM1U2K2t0ZTZ5aXI3aURLQUdSbXdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjg1NTAzCWZpbGU6V2VjaGF0WF8wLjYuOF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC42LjgKbHBwL2t4eUxzYlZFWEZoMTBybXFLWjBKc0tGOUNxa2hha1FBckFrUVh5aEVJcjl3bzBEZjVKZU0vU1VjS0M1WXdDMm9XMi91bnl3MitsZjVseG42Qmc9PQo="
     }
   }
 }
