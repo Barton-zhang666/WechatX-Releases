@@ -1,11 +1,11 @@
 {
-  "version": "0.6.8",
-  "notes": "- 增加官方 DeepSeek Harness Windows 桌面版识别与内置运行时适配：从安装注册表、默认目录或手动路径定位，使用专属 SDK profile，保留账号认证和现有会话权限。已卸载 npm CLI，使用官方桌面版 `0.2.1-rc.5` 验证模型发现、真实账号流式回复及合成工具调用。\r\n- Add official DeepSeek Harness Windows Desktop discovery and bundled-runtime adaptation through installation records, default directories, and manual paths. Reuse authentication, isolated SDK profiles, and existing conversation permissions. With the npm CLI removed, official Desktop `0.2.1-rc.5` passed model discovery, a live account streaming response, and a synthetic tool call.\r\n- 修复桌面安装名称包含版本号时无法识别，以及启动时读取到尚未写完的端口文件导致偶发连接失败；端口文件改为完整写入后原子发布。\r\n- Recognize version-suffixed Desktop installation names and atomically publish runtime port files to prevent intermittent startup failures from partial reads.\r\n",
-  "pub_date": "2026-11-03T05:58:24.364Z",
+  "version": "0.7.0",
+  "notes": "- 完成消息检索 P0＋P1：多关键词复用加密 FTS 索引和统一规范化，返回命中附近原文；跨账号统一排序、显式时间排序和覆盖状态；新增复合检索与批量上下文工具，合并重复记录、关联授权范围内的引用原文，并独立执行记录/字节/token 预算。\r\n- Implement retrieval P0/P1: reuse encrypted FTS with normalized literal verification and match-centered snippets; merge ranked candidates across accounts with explicit time ordering and coverage. Add composite retrieval and deduplicated batch context, authorized quote links, and independent record/byte/token budgets.\r\n- WechatX Harness 为已知 OpenAI 模型接入离线 tokenizer，其他模型使用 Unicode 估算及返回用量校准，预留输出和工具空间，保持完整轮次裁剪。P2 语义索引与 P3 摘要压缩仍待后续实施。\r\n- Add offline tokenization for known OpenAI models, Unicode estimates and returned-usage calibration for other custom API models, with answer/tool headroom and complete-turn trimming. Semantic indexing (P2) and summary compression (P3) remain planned.\r\n- 修复 DeepSeek Harness 实时事件把系统提示、开发者指令和工具结果误显示为模型回答的问题；对话只接收用户消息与模型正文，处理过程仅显示状态与耗时。\r\n- Fix DeepSeek Harness live events exposing system/developer prompts and tool results as assistant replies. Only user messages and assistant text become chat bubbles; progress shows status and timing only.\r\n",
+  "pub_date": "2026-11-04T03:23:18.809Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/Barton-zhang666/WechatX-Releases/releases/download/v0.6.8/WechatX_0.6.8_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXlzc1ZEWkJWdnNPb3NNdkgxZk1maTRVck5MQk8xcDNSb2dTSkdSV3dsU29uTFFkaU1VckNqSkdva05FSG14MkVLM2tFd1doRHFGM1U2K2t0ZTZ5aXI3aURLQUdSbXdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjg1NTAzCWZpbGU6V2VjaGF0WF8wLjYuOF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC42LjgKbHBwL2t4eUxzYlZFWEZoMTBybXFLWjBKc0tGOUNxa2hha1FBckFrUVh5aEVJcjl3bzBEZjVKZU0vU1VjS0M1WXdDMm9XMi91bnl3MitsZjVseG42Qmc9PQo="
+      "url": "https://github.com/Barton-zhang666/WechatX-Releases/releases/download/v0.7.0/WechatX_0.7.0_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXlzc1ZEWkJWdm5lWDYwd3psS2xDcjlORFlzTUg1SGhsaGo3U0tmMGY2YnFrOE9tQ1psVmRzVE1NM0dkSjg3QlRmY1NYbjVENWRJUHRyUTZyTnZjQWdMK1QwZTJ0bFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzYyNTk4CWZpbGU6V2VjaGF0WF8wLjcuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC43LjAKY0dmN1hlOXVHZ1dQRFMxRDNRbjAvTy9aWEZrdHFHN1g3OGJiVm9GbW9nVFJreXg0UXNzM1lEeG43blJVRE5rS0QwLzcwcmhnM0loUU5udDRCN3BoQ0E9PQo="
     }
   }
 }
