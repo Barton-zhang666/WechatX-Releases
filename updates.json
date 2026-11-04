@@ -1,11 +1,11 @@
 {
-  "version": "0.7.0",
-  "notes": "- 完成消息检索 P0＋P1：多关键词复用加密 FTS 索引和统一规范化，返回命中附近原文；跨账号统一排序、显式时间排序和覆盖状态；新增复合检索与批量上下文工具，合并重复记录、关联授权范围内的引用原文，并独立执行记录/字节/token 预算。\r\n- Implement retrieval P0/P1: reuse encrypted FTS with normalized literal verification and match-centered snippets; merge ranked candidates across accounts with explicit time ordering and coverage. Add composite retrieval and deduplicated batch context, authorized quote links, and independent record/byte/token budgets.\r\n- WechatX Harness 为已知 OpenAI 模型接入离线 tokenizer，其他模型使用 Unicode 估算及返回用量校准，预留输出和工具空间，保持完整轮次裁剪。P2 语义索引与 P3 摘要压缩仍待后续实施。\r\n- Add offline tokenization for known OpenAI models, Unicode estimates and returned-usage calibration for other custom API models, with answer/tool headroom and complete-turn trimming. Semantic indexing (P2) and summary compression (P3) remain planned.\r\n- 修复 DeepSeek Harness 实时事件把系统提示、开发者指令和工具结果误显示为模型回答的问题；对话只接收用户消息与模型正文，处理过程仅显示状态与耗时。\r\n- Fix DeepSeek Harness live events exposing system/developer prompts and tool results as assistant replies. Only user messages and assistant text become chat bubbles; progress shows status and timing only.\r\n",
-  "pub_date": "2026-11-04T03:23:18.809Z",
+  "version": "0.7.1",
+  "notes": "- 检索增加自动时间分段与同毫秒 ID 续查、完整候选排序、有限讨论上下文和跨页去重；提升短语/词距权重并降低重复讨论占位。游标绑定授权、轮次及数据版本，同步后失效，单次限制与累计额度保持独立。重复查询控制、语义索引和摘要压缩尚未实施。\r\n- Add adaptive time partitions with equal-timestamp ID continuation, complete-candidate ranking, bounded discussion context and cross-page deduplication. Rank by phrase/proximity and reduce repeated-discussion dominance. Bind cursors to authorization, turns and archive versions; preserve per-call and cumulative limits. Repeated-query suppression, semantic indexing and summary compression remain deferred.\r\n",
+  "pub_date": "2026-11-04T07:25:32.283Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/Barton-zhang666/WechatX-Releases/releases/download/v0.7.0/WechatX_0.7.0_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXlzc1ZEWkJWdm5lWDYwd3psS2xDcjlORFlzTUg1SGhsaGo3U0tmMGY2YnFrOE9tQ1psVmRzVE1NM0dkSjg3QlRmY1NYbjVENWRJUHRyUTZyTnZjQWdMK1QwZTJ0bFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzYyNTk4CWZpbGU6V2VjaGF0WF8wLjcuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC43LjAKY0dmN1hlOXVHZ1dQRFMxRDNRbjAvTy9aWEZrdHFHN1g3OGJiVm9GbW9nVFJreXg0UXNzM1lEeG43blJVRE5rS0QwLzcwcmhnM0loUU5udDRCN3BoQ0E9PQo="
+      "url": "https://github.com/Barton-zhang666/WechatX-Releases/releases/download/v0.7.1/WechatX_0.7.1_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXlzc1ZEWkJWdnJERWhTOWhTOUpnbnplZzg0VVhabUtaMkQ2WDVhYVc3azZBR0NoeDJDTHAyNkl1SG1CaWtDT2pCQ242cGxDS1pveW5SV2JMZHJpazhEaitrTUxkblFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzc3MTMxCWZpbGU6V2VjaGF0WF8wLjcuMV94NjQtc2V0dXAuZXhlCXZlcnNpb246MC43LjEKcS9YcHpVclI1NnBVdDByUmY1eHFVSnZZVFpoMDRvVFV4eUJUQzJ6R3lVcHp5RWtQTlh0V3dCSGQrc29tMFNOY3RTT0VZRnFROW1ydHpUWE82MktKQ3c9PQo="
     }
   }
 }
